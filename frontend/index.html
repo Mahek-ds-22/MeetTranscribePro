@@ -1,68 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>MeetTranscribe Pro - Demo</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="stylesheet" href="css/main.css" />
-</head>
-<body>
-  <div class="app-header"><h1>MeetTranscribe Pro (Demo)</h1></div>
-  <div class="container">
-    <div id="config-panel" class="panel">
-      <h2>Configuration</h2>
-      <label>Speakers: <input id="speaker-count" type="number" value="2" min="1" max="10"></label>
-      <label>Language:
-        <select id="language"><option value="en-US">English (US)</option></select>
-      </label>
-      <button id="apply-config-btn">Apply</button>
+<html>
+  <head>
+    <title>MeetTranscribe Pro</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+
+    <h1>MeetTranscribe Pro</h1>
+
+    <div id="app">
+      <button id="generate-summary">Generate Summary</button>
+      <button id="add-attendees">Add Attendees</button>
+      <button id="assign-tasks">Assign Tasks</button>
+
+      <div id="output"></div>
     </div>
 
-    <div id="calibration-panel" class="panel" style="display:none;">
-      <h2>Calibration</h2>
-      <div id="speaker-cards"></div>
-      <button id="goto-recording">Go to Recording</button>
-    </div>
-
-    <div id="recording-panel" class="panel" style="display:none;">
-      <h2>Recording</h2>
-      <div>
-        <button id="start-recording-btn">Start</button>
-        <button id="stop-recording-btn" disabled>Stop</button>
-      </div>
-      <div id="transcript-live" class="transcript-messages"></div>
-      <div>
-        <button id="generate-summary-btn">Generate Summary & Email</button>
-        <button id="manage-attendees-btn">Manage Attendees</button>
-        <button id="assign-tasks-btn">Assign Tasks</button>
-      </div>
-    </div>
-
-    <div id="results-panel" class="panel" style="display:none;">
-      <h2>Results</h2>
-      <div id="summary-area"></div>
-      <div id="tasks-area"></div>
-    </div>
-
-    <!-- attendees modal -->
-    <div id="attendees-modal" style="display:none;">
-      <h3>Attendees</h3>
-      <textarea id="attendees-input" placeholder="one per line: name,email"></textarea>
-      <button id="save-attendees-btn">Save</button>
-    </div>
-
-    <!-- tasks modal -->
-    <div id="tasks-modal" style="display:none;">
-      <h3>Assign Tasks</h3>
-      <textarea id="tasks-input" placeholder="one per line: attendee_id,task_text,due_date(YYYY-MM-DD or blank)"></textarea>
-      <button id="save-tasks-btn">Save Tasks</button>
-    </div>
-  </div>
-
-  <script src="js/app.js"></script>
-  <script src="js/transcriptManager.js"></script>
-  <script src="js/profileManager.js"></script>
-  <script src="js/summaryUI.js"></script>
-  <script src="js/tasksUI.js"></script>
-</body>
+    <script src="js/app.js"></script>
+  </body>
 </html>
